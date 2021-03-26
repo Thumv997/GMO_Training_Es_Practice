@@ -150,34 +150,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 //     ],
                 //   ),
                 // ),
-                Card(
-                  elevation: 5,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.amber,
-                          radius: 15,
-                          child: Icon(
-                            Icons.menu,
-                            color: Colors.white,
+                InkWell(
+                  onTap: () {
+                    Navigation.instance.navigateTo(GRAMMAR_CHECK);
+                  },
+                  child: Card(
+                    elevation: 5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.amber,
+                            radius: 15,
+                            child: Icon(
+                              Icons.menu,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: Text('1625 Main Street',
-                              style: TextStyle(fontWeight: FontWeight.w500)),
-                        ),
-                        CircularPercentIndicator(
-                          radius: 25.0,
-                          lineWidth: 3.0,
-                          percent: 0.0,
-                          progressColor: Colors.red,
-                        ),
-                      ],
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text('1625 Main Street',
+                                style: TextStyle(fontWeight: FontWeight.w500)),
+                          ),
+                          CircularPercentIndicator(
+                            radius: 25.0,
+                            lineWidth: 3.0,
+                            percent: 0.0,
+                            progressColor: Colors.red,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -288,7 +293,6 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text('Practice English Grammar v1.1.4'),
                 IconButton(
-                  color: Colors.amber,
                   icon: Icon(Icons.settings),
                   onPressed: () {
                     Navigation.instance.navigateTo(SETTING);

@@ -1,2 +1,3 @@
 const HOME = 'HOME';
 const SETTING = 'SETTING';
+const GRAMMAR_CHECK = 'GRAMMAR_CHECK';
