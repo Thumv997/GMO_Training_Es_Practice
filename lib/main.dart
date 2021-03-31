@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gmo_training_english_practice/data/adjective_adverbs_data.dart';
-import 'package:gmo_training_english_practice/model/models.dart';
-import 'package:gmo_training_english_practice/widget/test_es.dart';
+import 'package:gmo_training_english_practice/widget/model.dart';
+import 'package:gmo_training_english_practice/pages/grammar_checklist.dart';
+import 'package:gmo_training_english_practice/pages/home.dart';
+import 'package:gmo_training_english_practice/widget/test_es_view.dart';
 
 import 'navigation/navigation.dart';
 import 'navigation/routes.dart';
@@ -32,52 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
         iconTheme: IconThemeData(color: Colors.amber),
       ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-    loadAd();
-  }
-
-  List<EsModels> models;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Hello'),
-      ),
-      body: Center(
-        child: FutureBuilder(
-          future: loadAd(),
-          builder: (context, snapshot) {
-            models = snapshot.data;
-            if (snapshot.hasData) {
-              print(models.length);
-              return ListView.builder(
-                itemCount: models.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Text('${models[index].answers[0]}');
-                },
-              );
-            } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
-            }
-
-            return CircularProgressIndicator();
-          },
-        ),
-      ),
+      home: TestEs(),
     );
   }
 }

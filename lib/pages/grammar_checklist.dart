@@ -48,7 +48,10 @@ class GrammarChecklist extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Practice: ${entries[index]}'),
-                    Text('Status: ${entries[index]}'),
+                    Text(
+                      'Status: ${entries[index]}',
+                      style: TextStyle(fontSize: 12),
+                    ),
                   ],
                 ),
               ),
